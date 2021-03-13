@@ -7,7 +7,7 @@ const GlobalStyles = createGlobalStyle`
     --portfolio-yellow: #FFCC29;
     --snow: #F4F4F4;
     --c-steely-blue: #96C4D9;
-    --link-pink: #FA3C85;
+    --link-pink: #E00659; /* Previously FA3C85 */
     --pale-blue: #C1E8FA;
   }
 
