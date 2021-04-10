@@ -36,6 +36,9 @@ const ConnectDivStyles = styled.div`
     &:focus {
       .connectBubble {
         background-color: var(--link-pink);
+        svg {
+          stroke: white;
+        }
       }
     }
   }
@@ -44,22 +47,22 @@ const ConnectDivStyles = styled.div`
 const Connect = ({ name }) => (
   <ConnectDivStyles>
     <h3>Connect with {name}</h3>
-    <div className='connectIcons'>
-      <a href='https://github.com/anthkris/'>
-        <div className='connectBubble'>
-          <span className='sr-only'>Github</span>
+    <div className="connectIcons">
+      <a href="https://github.com/anthkris/">
+        <div className="connectBubble">
+          <span className="sr-only">Github</span>
           <FiGithub />
         </div>
       </a>
-      <a href='https://www.linkedin.com/in/anthkris/'>
-        <div className='connectBubble'>
-          <span className='sr-only'>LinkedIn</span>
+      <a href="https://www.linkedin.com/in/anthkris/">
+        <div className="connectBubble">
+          <span className="sr-only">LinkedIn</span>
           <FiLinkedin />
         </div>
       </a>
-      <a href='https://twitter.com/anthkris'>
-        <div className='connectBubble'>
-          <span className='sr-only'>Twitter</span>
+      <a href="https://twitter.com/anthkris">
+        <div className="connectBubble">
+          <span className="sr-only">Twitter</span>
           <FiTwitter />
         </div>
       </a>

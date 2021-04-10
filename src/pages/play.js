@@ -1,4 +1,5 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import SEO from '../components/SEO';
 import PlainCard from '../components/PlainCard';
@@ -9,35 +10,64 @@ const PlayProjectStyles = styled.section`
   text-align: center;
   .playProjectCards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 20px;
     text-align: left;
   }
 `;
 
-const PlayPage = () => (
-  <>
-    <SEO title='Play' />
-    <PlayProjectStyles className="interior">
-      <div className='playProjectCards'>
-        <PlainCard
-          itemTitle='Games on Itch.io'
-          itemDesc='My growing portfolio of tiny games developed with game-specific toolsets.'
-          itemUrl='https://anthkris.itch.io/'
-        />
-        <PlainCard
-          itemTitle='Simone'
-          itemDesc='A jQuery-based Simon clone. Betcha can’t beat it!'
-          itemUrl='https://codepen.io/anthkris/full/WGGAQz'
-        />
-        <PlainCard
-          itemTitle='A Tribute to Yma Sumac'
-          itemDesc='A responsive website built in tribute to the great Peruvian soprano, Yma Sumac.'
-          itemUrl='https://codepen.io/anthkris/full/qqyLEg'
-        />
-      </div>
-    </PlayProjectStyles>
-  </>
-);
+const PlayPage = ({ data }) => {
+  const playProjects = data.play.nodes;
+  // console.log('Play Projects', playProjects.length);
+
+  const playProjectCards = playProjects.map((project) => (
+    // console.log(project.image.asset);
+    <PlainCard
+      key={project.id}
+      itemTitle={project.name}
+      itemDesc={project.description}
+      itemUrl={project.projectUrl}
+      imgSrc={project.image.asset.fluid}
+      imgAlt={project.image.asset.altText}
+    />
+  ));
+  return (
+    <>
+      <SEO title='Play' />
+      <PlayProjectStyles className="interior">
+        <div className='playProjectCards'>{playProjectCards}</div>
+      </PlayProjectStyles>
+    </>
+  );
+};
+
+export const query = graphql`
+  query PlayQuery {
+    play: allSanityProject(
+      filter: { projectType: { elemMatch: { projectType: { eq: "Play" } } } }
+      sort: { fields: publishedAt }
+    ) {
+      nodes {
+        image {
+          asset {
+            altText
+            fluid(maxWidth: 700, maxHeight: 600) {
+              base64
+              srcWebp
+              srcSetWebp
+              aspectRatio
+              src
+              ...GatsbySanityImageFluid
+            }
+          }
+        }
+        description
+        id
+        name
+        projectUrl
+      }
+    }
+  }
+`;
 
 export default PlayPage;

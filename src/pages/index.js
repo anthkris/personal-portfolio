@@ -62,7 +62,7 @@ const OtherProjectStyles = styled.section`
   text-align: center;
   .otherProjectCards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 20px;
     margin-top: 4rem;
     text-align: left;

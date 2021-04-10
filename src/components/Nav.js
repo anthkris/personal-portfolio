@@ -54,32 +54,32 @@ const Nav = () => {
   const [style, trigger] = useBoop({ x: 2, y: 0, rotation: 0, scale: 1.2 });
   return (
     <NavStyles>
-      <Link className="logoLink" to="/" onMouseEnter={trigger}>
+      <Link className='logoLink' to='/' onMouseEnter={trigger}>
         <animated.img
           style={style}
-          className="logo"
+          className='logo'
           src={logo}
-          alt="Home page"
+          alt='Home page'
         />
       </Link>
       <ul>
-        <li>
+        {/* <li>
           <Link activeClassName="active" to="/writing">
             Writing
           </Link>
-        </li>
+        </li> */}
         <li>
-          <Link activeClassName="active" to="/play">
+          <Link activeClassName='active' to='/play'>
             Play
           </Link>
         </li>
         <li>
-          <Link activeClassName="active" to="/explorables">
+          <Link activeClassName='active' to='/explorables'>
             Explorables
           </Link>
         </li>
         <li>
-          <Link activeClassName="active" to="/contact">
+          <Link activeClassName='active' to='/contact'>
             Contact
           </Link>
         </li>

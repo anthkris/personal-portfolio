@@ -13,11 +13,18 @@ const ContentStyles = styled.div`
 `;
 
 const Layout = ({ children }) => {
+  // console.log(children);
+  let postTitle;
   let markText;
   let tagline;
   if (children.props.location.pathname === '/play') {
     markText = 'is making stuff';
     tagline = 'on the interwebs';
+  } else if (children.props.pageContext.slug) {
+    // console.log('has slug');
+    postTitle = children.props.data.post.title;
+    markText = null;
+    tagline = null;
   } else if (children.props.location.pathname === '/writing') {
     markText = 'is writing';
     tagline = 'to be as transparent, helpful, and reflective as they can';
@@ -34,7 +41,7 @@ const Layout = ({ children }) => {
       <Typography />
       <ContentStyles>
         <SkipNavLink />
-        <PageHead markText={markText} tagline={tagline} />
+        <PageHead postTitle={postTitle} markText={markText} tagline={tagline} />
         <SkipNavContent />
         <main>{children}</main>
       </ContentStyles>
