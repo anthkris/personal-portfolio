@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import SEO from '../components/SEO';
-import Connect from '../components/Connect';
 import Puppers from '../assets/images/Jazzy_and_Dash.jpg';
 
 const HalfPageStyles = styled.div`
@@ -10,10 +9,11 @@ const HalfPageStyles = styled.div`
   flex-wrap: wrap;
   padding: 2rem;
   font-size: 1.6rem;
+  justify-content: space-between;
   section {
     font-size: 1.2rem;
-    @media (min-width: 650px) {
-      width: 48%;
+    @media (min-width: 700px) {
+      width: 46%;
     }
   }
   .leadText {
@@ -26,7 +26,12 @@ const HalfPageStyles = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 auto;
+    width: 100%;
+    @media (min-width: 700px) {
+      width: 46%;
+      margin-left: auto;
+      margin-right: 0;
+    }
   }
   .pupperImg {
     max-width: 400px;
@@ -87,7 +92,6 @@ const ContactPage = () => (
         <figcaption className='imageCaption'>
           Dashwood and Jazzy help, too! (but mostly, they don’t)
         </figcaption>
-        <Connect name='Kristin' />
       </figure>
     </HalfPageStyles>
   </>

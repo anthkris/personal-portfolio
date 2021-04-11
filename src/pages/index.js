@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import SEO from '../components/SEO';
-import Connect from '../components/Connect';
 import PortfolioCard from '../components/PortfolioCard';
 import PlainCard from '../components/PlainCard';
 import KrisBot from '../assets/images/knanthony_logo.svg';
@@ -26,10 +25,11 @@ const HalfPageStyles = styled.div`
     }
   }
   .imageSection {
-    display: flex;
+    display: none;
     justify-content: center;
     margin: 0 auto;
     @media (min-width: 650px) {
+      display: flex;
       margin: initial;
     }
   }
@@ -87,7 +87,6 @@ const HomePage = () => (
             hosted the Dear Instructional Designer podcast, and help wherever I
             can to foster newbies into learning experience design.
           </p>
-          <Connect name="Me" />
         </section>
         <section className='imageSection'>
           <img

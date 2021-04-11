@@ -16,7 +16,7 @@ const PageHeadStyles = styled.header`
 
   .mark {
     padding: 10px;
-    width: 70%;
+    width: 90%;
     display: block;
     margin: 10px auto;
   }
@@ -37,6 +37,9 @@ const PageHeadStyles = styled.header`
     h2 {
       font-size: 1.3rem;
     }
+    .mark {
+      width: 70%;
+    }
   }
 `;
 
@@ -46,18 +49,18 @@ const PageHead = ({
   tagline = 'Makes Work you can Play',
 }) => (
   <PageHeadStyles>
-    <div className="interior">
+    <div className='interior'>
       <Nav />
       {!postTitle && (
         <>
           <h1>
             Kristin
-            <span className="mark">{markText}</span>
+            <span className='mark'>{markText}</span>
           </h1>
           <h2>{tagline}</h2>
         </>
       )}
-      {postTitle && <h1 className='postTitle'>{postTitle}</h1>}
+      {postTitle && <h1 className="postTitle">{postTitle}</h1>}
     </div>
   </PageHeadStyles>
 );
