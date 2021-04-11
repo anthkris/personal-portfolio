@@ -3,11 +3,16 @@ import React from 'react';
 import Image from 'gatsby-plugin-sanity-image';
 import styled from 'styled-components';
 import BlockContent from '@sanity/block-content-to-react';
+import getYouTubeId from 'get-youtube-id';
+import YouTube from 'react-youtube';
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import SEO from '../components/SEO';
+import Code from '../components/CodeBlock';
 
 const PostStyles = styled.section`
-  font-size: 1.2rem;
-  line-height: 1.6rem;
+  font-size: 1.4rem;
+  line-height: 2rem;
   padding: 2rem;
   .title {
     line-height: 1.2em;
@@ -25,15 +30,22 @@ const PostStyles = styled.section`
     width: 100%;
     text-align: center;
   }
+  a {
+    color: var(--link-pink);
+  }
+  pre,
+  code {
+    word-wrap: break-word;
+    white-space: pre-wrap;
+  }
 `;
 
 const SinglePostPage = ({ data }) => {
   const { post } = data;
-
-  console.log('Post: ', post);
+  // console.log('Post: ', post);
   // From: https://stackoverflow.com/questions/63563616/passing-css-classes-into-sanity-block-content-root
   const overrides = {
-    h2: (props) => <h2 className="title" {...props} />,
+    h2: (props) => <h2 className='title' {...props} />,
   };
 
   const serializers = {
@@ -46,11 +58,6 @@ const SinglePostPage = ({ data }) => {
             overrides[props.node.style]({ children: props.children })
           : // otherwise, fallback to the provided default with all props
             BlockContent.defaultSerializers.types.block(props),
-      code: (props) => (
-        <pre data-language={props.node.language}>
-          <code>{props.node.code}</code>
-        </pre>
-      ),
       image: ({ node }) => (
         // console.log('is this working? image');
         <figure>
@@ -58,6 +65,22 @@ const SinglePostPage = ({ data }) => {
           <figcaption>{node.title}</figcaption>
         </figure>
       ),
+      youtube: ({ node }) => {
+        const { url } = node;
+        const id = getYouTubeId(url);
+        return <YouTube videoId={id} />;
+      },
+      code: ({ node }) => {
+        if (!node || !node.code) {
+          return null;
+        }
+        const { language, code } = node;
+        return (
+          <SyntaxHighlighter language={language || 'text'} style={docco}>
+            {code}
+          </SyntaxHighlighter>
+        );
+      },
     },
     marks: {
       strong: (props) => <strong>{props.children}</strong>,
@@ -67,7 +90,7 @@ const SinglePostPage = ({ data }) => {
   return (
     <>
       <SEO title={post.title} />
-      <PostStyles className="interior">
+      <PostStyles className='interior'>
         <BlockContent blocks={post._rawBody} serializers={serializers} />
       </PostStyles>
     </>

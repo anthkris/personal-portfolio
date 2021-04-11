@@ -1,15 +1,15 @@
-import { Link } from 'gatsby';
 import React from 'react';
-
-const SingleWritingPost = ({ post }) => (
-  <Link to={`/writing/${post.slug.current}`}>
-    <h2>{post.title}</h2>
-  </Link>
-);
+import BlogCard from './BlogCard';
 
 const WritingList = ({ posts }) => {
   const postArr = posts.map((post) => (
-    <SingleWritingPost key={post.id} post={post} />
+    <BlogCard
+      key={post.id}
+      postSlug={post.slug.current}
+      postDesc={post.description}
+      postTitle={post.title}
+      postDate={post.publishedAt}
+    />
   ));
   return postArr;
 };

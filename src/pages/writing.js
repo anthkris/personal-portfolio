@@ -25,7 +25,7 @@ export default WritingPage;
 
 export const query = graphql`
   query PostQuery {
-    posts: allSanityPost(sort: { fields: publishedAt }) {
+    posts: allSanityPost(sort: { fields: publishedAt, order: DESC }) {
       nodes {
         title
         slug {
@@ -33,6 +33,7 @@ export const query = graphql`
         }
         id
         publishedAt
+        description
       }
     }
   }

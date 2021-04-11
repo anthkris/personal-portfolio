@@ -22,20 +22,21 @@ const PlayPage = ({ data }) => {
 
   const playProjectCards = playProjects.map((project) => (
     // console.log(project.image.asset);
+    // console.log(project.image.asset);
     <PlainCard
       key={project.id}
       itemTitle={project.name}
       itemDesc={project.description}
       itemUrl={project.projectUrl}
-      imgSrc={project.image.asset.fluid}
-      imgAlt={project.image.asset.altText}
+      imgAsset={project.image}
+      imgAlt={project.altText}
     />
   ));
   return (
     <>
-      <SEO title='Play' />
-      <PlayProjectStyles className="interior">
-        <div className='playProjectCards'>{playProjectCards}</div>
+      <SEO title="Play" />
+      <PlayProjectStyles className='interior'>
+        <div className="playProjectCards">{playProjectCards}</div>
       </PlayProjectStyles>
     </>
   );
@@ -49,22 +50,13 @@ export const query = graphql`
     ) {
       nodes {
         image {
-          asset {
-            altText
-            fluid(maxWidth: 700, maxHeight: 600) {
-              base64
-              srcWebp
-              srcSetWebp
-              aspectRatio
-              src
-              ...GatsbySanityImageFluid
-            }
-          }
+          ...ImageWithPreview
         }
         description
         id
         name
         projectUrl
+        altText
       }
     }
   }

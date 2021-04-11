@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Img from 'gatsby-image';
+import SanityImage from 'gatsby-plugin-sanity-image';
 
 const PlainCardStyles = styled.a`
   background: var(--c-steely-blue);
@@ -14,17 +14,28 @@ const PlainCardStyles = styled.a`
   &:focus {
     background: var(--portfolio-yellow);
   }
-  .gatsby-image-wrapper {
+  .cardImg {
     margin-bottom: 20px;
   }
 `;
 
-const PlainCard = ({ imgSrc, imgAlt, itemTitle, itemDesc, itemUrl }) => (
-  <PlainCardStyles href={itemUrl}>
-    {imgSrc && <Img fluid={imgSrc} alt={imgAlt} width='300' height='100' />}
-    <h4 className="itemTitle">{itemTitle}</h4>
-    <p className="itemDescription">{itemDesc}</p>
-  </PlainCardStyles>
-);
+const PlainCard = ({ imgAsset, itemTitle, itemDesc, itemUrl, imgAlt }) => {
+  console.log(imgAlt);
+  return (
+    <PlainCardStyles href={itemUrl}>
+      {imgAsset && (
+        <SanityImage
+          {...imgAsset}
+          width={700}
+          alt={`${imgAlt}`}
+          height={600}
+          className='cardImg'
+        />
+      )}
+      <h4 className="itemTitle">{itemTitle}</h4>
+      <p className="itemDescription">{itemDesc}</p>
+    </PlainCardStyles>
+  );
+};
 
 export default PlainCard;

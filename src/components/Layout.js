@@ -30,7 +30,7 @@ const Layout = ({ children }) => {
     tagline = null;
   } else if (children.props.location.pathname.includes('/writing')) {
     markText = 'is writing';
-    tagline = 'to be as transparent, helpful, and reflective as they can';
+    tagline = 'about learning, work, and play';
   } else if (children.props.location.pathname.includes('/contact')) {
     markText = 'is around';
     tagline = 'somewhere';

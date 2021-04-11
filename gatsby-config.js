@@ -14,8 +14,8 @@ module.exports = {
     {
       resolve: 'gatsby-source-sanity',
       options: {
-        projectId: 'a6q8gpju',
-        dataset: 'production',
+        projectId: process.env.SANITY_PROJECT_ID,
+        dataset: process.env.SANITY_DATASET,
         watchMode: true,
         token: process.env.SANITY_TOKEN,
       },
@@ -28,5 +28,8 @@ module.exports = {
         dataset: process.env.SANITY_DATASET,
       },
     },
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
   ],
 };

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import styled from 'styled-components';
 import Nav from './Nav';
 
@@ -28,6 +29,15 @@ const PageHeadStyles = styled.header`
 
   h2 {
     font-size: 1rem;
+  }
+
+  .backToWriting {
+    font-size: 1.3rem;
+    text-transform: capitalize;
+  }
+
+  .goArrow {
+    font-family: 'Fredoka Dingbats';
   }
 
   @media only screen and (min-width: 700px) {
@@ -60,7 +70,16 @@ const PageHead = ({
           <h2>{tagline}</h2>
         </>
       )}
-      {postTitle && <h1 className="postTitle">{postTitle}</h1>}
+      {postTitle && (
+        <>
+          <h1 className='postTitle'>{postTitle}</h1>
+          <p className='backToWriting'>
+            <Link to='/writing'>
+              <span className="goArrow">M</span> Back to all writing
+            </Link>
+          </p>
+        </>
+      )}
     </div>
   </PageHeadStyles>
 );
