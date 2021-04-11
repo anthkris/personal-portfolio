@@ -38,7 +38,7 @@ const NavStyles = styled.nav`
   a {
     text-decoration: none;
     color: var(--black);
-    padding: 0;
+    padding: 0.3rem 0;
     &:hover,
     &:focus,
     &.active {

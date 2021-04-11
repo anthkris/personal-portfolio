@@ -23,19 +23,25 @@ const PortfolioCardStyles = styled.div`
   .portfolioItemLink {
     margin-top: auto;
     color: var(--link-pink);
+    text-decoration: underline;
     .goArrow {
       font-family: 'Fredoka Dingbats';
     }
+  }
+  .cardLink {
+    text-decoration: none;
   }
 `;
 
 const PortfolioCard = ({ imgSrc, imgAlt, itemTitle, itemDesc, itemUrl }) => (
   <PortfolioCardStyles>
-    <img className="portfolioItemImg" src={imgSrc} alt={imgAlt} />
-    <h4>{itemTitle}</h4>
-    <p className='itemDescription'>{itemDesc}</p>
-    <a href={itemUrl} className='portfolioItemLink'>
-      Give it a go <span className="goArrow">L</span>
+    <a href={itemUrl} className="cardLink">
+      <img className="portfolioItemImg" src={imgSrc} alt={imgAlt} />
+      <h4>{itemTitle}</h4>
+      <p className='itemDescription'>{itemDesc}</p>
+      <span className='portfolioItemLink'>
+        Give it a go <span className="goArrow">L</span>
+      </span>
     </a>
   </PortfolioCardStyles>
 );
