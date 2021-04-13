@@ -31,5 +31,19 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `K. Anthony Portfolio`,
+        short_name: `KAnthonyPortfolio`,
+        description: `Kristin makes work you can play. Find out more on their portfolio.`,
+        lang: `en`,
+        start_url: `/`,
+        background_color: `#F4F4F4`,
+        theme_color: `#37ABD4`,
+        display: `standalone`,
+        icon: `src/assets/images/knanthony_logo.svg`,
+      },
+    },
   ],
 };
