@@ -19,23 +19,20 @@ const PlainCardStyles = styled.a`
   }
 `;
 
-const PlainCard = ({ imgAsset, itemTitle, itemDesc, itemUrl, imgAlt }) => {
-  console.log(imgAlt);
-  return (
-    <PlainCardStyles href={itemUrl}>
-      {imgAsset && (
-        <SanityImage
-          {...imgAsset}
-          width={700}
-          alt={`${imgAlt}`}
-          height={600}
-          className='cardImg'
-        />
-      )}
-      <h4 className="itemTitle">{itemTitle}</h4>
-      <p className="itemDescription">{itemDesc}</p>
-    </PlainCardStyles>
-  );
-};
-
+const PlainCard = ({ imgAsset, itemTitle, itemDesc, itemUrl, imgAlt }) => (
+  // console.log(imgAlt);
+  <PlainCardStyles href={itemUrl}>
+    {imgAsset && (
+      <SanityImage
+        {...imgAsset}
+        width={700}
+        alt={`${imgAlt}`}
+        height={600}
+        className='cardImg'
+      />
+    )}
+    <h4 className="itemTitle">{itemTitle}</h4>
+    <p className="itemDescription">{itemDesc}</p>
+  </PlainCardStyles>
+);
 export default PlainCard;

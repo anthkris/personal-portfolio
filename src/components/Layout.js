@@ -31,9 +31,9 @@ const Layout = ({ children }) => {
   } else if (children.props.location.pathname.includes('/writing')) {
     markText = 'is writing';
     tagline = 'about learning, work, and play';
-  } else if (children.props.location.pathname.includes('/contact')) {
-    markText = 'is around';
-    tagline = 'somewhere';
+  } else if (children.props.location.pathname.includes('/about')) {
+    markText = 'is learning';
+    tagline = 'something';
   } else {
     markText = 'Anthony';
     tagline = 'makes work you can play';

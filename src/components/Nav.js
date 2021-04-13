@@ -163,8 +163,8 @@ const Nav = () => {
         <Link activeClassName="active" to="/explorables">
           Explorables
         </Link>
-        <Link activeClassName="active" to="/contact">
-          Contact
+        <Link activeClassName="active" to="/about">
+          About
         </Link>
       </Trail>
       <ul className='desktopNav'>
@@ -184,8 +184,8 @@ const Nav = () => {
           </Link>
         </li>
         <li>
-          <Link activeClassName="active" to="/contact">
-            Contact
+          <Link activeClassName="active" to="/about">
+            About
           </Link>
         </li>
       </ul>

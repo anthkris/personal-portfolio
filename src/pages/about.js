@@ -44,18 +44,18 @@ const HalfPageStyles = styled.div`
   }
 `;
 
-const ContactPage = () => (
+const AboutPage = () => (
   <>
-    <SEO title='Contact' />
-    <HalfPageStyles className="interior">
+    <SEO title="About" />
+    <HalfPageStyles className='interior'>
       <section>
-        <p className='leadText'>
+        <p className="leadText">
           I am fundamentally motivated to{' '}
-          <span className='motivationHighlight'>learn new things</span> and
+          <span className="motivationHighlight">learn new things</span> and
           display that learning through projects,{' '}
-          <span className='motivationHighlight'>meet challenges</span> and make
+          <span className="motivationHighlight">meet challenges</span> and make
           progress towards goals, and{' '}
-          <span className='motivationHighlight'>make an impact</span> on
+          <span className="motivationHighlight">make an impact</span> on
           processes, people, and organizations.
         </p>
         <p>
@@ -83,13 +83,13 @@ const ContactPage = () => (
           that knowledge, and share with others.
         </p>
       </section>
-      <figure className="imageSection">
+      <figure className='imageSection'>
         <img
-          className="pupperImg"
+          className='pupperImg'
           src={Puppers}
-          alt='Jazzy and Dashwood (dogs)'
+          alt="Jazzy and Dashwood (dogs)"
         />
-        <figcaption className='imageCaption'>
+        <figcaption className="imageCaption">
           Dashwood and Jazzy help, too! (but mostly, they don’t)
         </figcaption>
       </figure>
@@ -97,4 +97,4 @@ const ContactPage = () => (
   </>
 );
 
-export default ContactPage;
+export default AboutPage;
