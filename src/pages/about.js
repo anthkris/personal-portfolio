@@ -3,35 +3,28 @@ import styled from 'styled-components';
 import SEO from '../components/SEO';
 import Puppers from '../assets/images/Jazzy_and_Dash.jpg';
 
-const HalfPageStyles = styled.div`
-  display: flex;
-  gap: 2%;
-  flex-wrap: wrap;
+const AboutPageStyles = styled.div`
   padding: 2rem;
   font-size: 1.6rem;
   justify-content: space-between;
+
   section {
     font-size: 1.2rem;
-    @media (min-width: 700px) {
-      width: 46%;
+    line-height: 1.5rem;
+    @media (min-width: 768px) {
+      width: 70%;
+      margin: 0 auto;
     }
   }
   .leadText {
     font-size: 1.7rem;
+    line-height: 2rem;
   }
   .motivationHighlight {
     color: var(--link-pink);
   }
   .imageSection {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     width: 100%;
-    @media (min-width: 700px) {
-      width: 46%;
-      margin-left: auto;
-      margin-right: 0;
-    }
   }
   .pupperImg {
     max-width: 400px;
@@ -47,7 +40,17 @@ const HalfPageStyles = styled.div`
 const AboutPage = () => (
   <>
     <SEO title="About" />
-    <HalfPageStyles className='interior'>
+    <AboutPageStyles className='interior'>
+      <figure className='imageSection'>
+        <img
+          className='pupperImg'
+          src={Puppers}
+          alt="Jazzy and Dashwood (dogs)"
+        />
+        <figcaption className="imageCaption">
+          Dashwood and Jazzy help, too! (but mostly, they don’t)
+        </figcaption>
+      </figure>
       <section>
         <p className="leadText">
           I am fundamentally motivated to{' '}
@@ -59,41 +62,33 @@ const AboutPage = () => (
           processes, people, and organizations.
         </p>
         <p>
-          Here’s how that motivation translates into the things I concentrate
-          on:
+          Can you remember the first online course you ever took? Well I can
+          remember the first one I ever made… and it was awful. But I didn’t
+          have the vocabulary to describe what was going wrong. With that desire
+          to articulate what I experienced as I was creating that first course,
+          I fell into learning experience design. But since the very beginning,
+          I’ve been fascinated by the tech and development side of that work.
         </p>
         <p>
-          <strong>Work you can Play:</strong> I focus on solving problems in the
-          learning space. The way I do that is by focusing on creating
-          story-focused, game-based l experiences that allow people to make
-          choices and experience consequences in a safe space. I’m particularly
-          interested in the tech space and in social issues.
+          I started teaching myself web development so that I could create
+          learning experiences that went beyond what typical WYSIWYG elearning
+          tools allowed. During my career, I’ve created HTML5 games, progressive
+          web apps, and even simulations of enterprise tools with tools such as
+          Phaser, React, NextJS, and AWS tools such as Lambda, Translate, and
+          Step Functions. That journey culminated in my first official front-end
+          engineer role in 2021.
         </p>
         <p>
-          <strong>Operational Excellence:</strong> I am deeply committed to
-          operating with excellence. For me, that means a focus on
-          accessibility, documentation, process, building solid foundations, and
-          digging deep to understand the fundamentals of a problem.
+          I’m currently a front-end engineer at Amazon building experiences with
+          AmazonSmile.
         </p>
         <p>
-          <strong>Intellectual Curiosity and Reflection:</strong> I love
-          learning new things, particularly when I know that I will be able to
-          apply that knowledge to a project or problem. I value the support and
-          space to learn about new ideas, technologies, and techniques, display
-          that knowledge, and share with others.
+          In my personal work, I focus on combining learning and tech into work
+          you can play: gameful, story-driven experiences that promote
+          inclusion, diversity, equity, and healthy, productive lives.
         </p>
       </section>
-      <figure className='imageSection'>
-        <img
-          className='pupperImg'
-          src={Puppers}
-          alt="Jazzy and Dashwood (dogs)"
-        />
-        <figcaption className="imageCaption">
-          Dashwood and Jazzy help, too! (but mostly, they don’t)
-        </figcaption>
-      </figure>
-    </HalfPageStyles>
+    </AboutPageStyles>
   </>
 );
 

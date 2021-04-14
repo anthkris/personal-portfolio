@@ -11,8 +11,8 @@ import SEO from '../components/SEO';
 import Code from '../components/CodeBlock';
 
 const PostStyles = styled.section`
-  font-size: 1.4rem;
-  line-height: 2rem;
+  font-size: 1.3rem;
+  line-height: 1.8rem;
   padding: 2rem;
   .title {
     line-height: 1.2em;
@@ -38,6 +38,9 @@ const PostStyles = styled.section`
     word-wrap: break-word;
     white-space: pre-wrap;
   }
+  @media (min-width: 768px) {
+    width: 70%;
+  }
 `;
 
 const SinglePostPage = ({ data }) => {
@@ -45,7 +48,7 @@ const SinglePostPage = ({ data }) => {
   // console.log('Post: ', post);
   // From: https://stackoverflow.com/questions/63563616/passing-css-classes-into-sanity-block-content-root
   const overrides = {
-    h2: (props) => <h2 className='title' {...props} />,
+    h2: (props) => <h2 className="title" {...props} />,
   };
 
   const serializers = {
@@ -90,7 +93,7 @@ const SinglePostPage = ({ data }) => {
   return (
     <>
       <SEO title={post.title} />
-      <PostStyles className='interior'>
+      <PostStyles className="interior">
         <BlockContent blocks={post._rawBody} serializers={serializers} />
       </PostStyles>
     </>

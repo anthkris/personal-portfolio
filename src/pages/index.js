@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Emoji from 'a11y-react-emoji';
 import SEO from '../components/SEO';
 import PortfolioCard from '../components/PortfolioCard';
 import PlainCard from '../components/PlainCard';
@@ -75,17 +76,14 @@ const HomePage = () => (
     <HalfPageStyles>
       <div className='interior'>
         <section>
-          <p className="leadText">Howdy!</p>
           <p className="leadText">
-            I'm a front-end engineer and learning technologist — a mix of web
-            developer, learning experience designer, and game developer. I
-            create story-focused learning experiences that help solve problems
-            for people.
+            Howdy! <Emoji symbol='👋🏽' label='' />
           </p>
-          <p>
-            I’ve been in the learning space for a while (almost a decade!),
-            hosted the Dear Instructional Designer podcast, and help wherever I
-            can to foster newbies into learning experience design.
+          <p className="leadText">
+            I’m a front-end engineer at Amazon with a learning experience design
+            background. In my personal work, I blend the two worlds to create
+            story-focused learning experiences that help solve problems for
+            people.
           </p>
         </section>
         <section className='imageSection'>
