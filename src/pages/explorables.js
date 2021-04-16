@@ -7,11 +7,13 @@ const ExplorablesPageStyles = styled.div`
   section {
     font-size: 1.2rem;
   }
-  .leadText {
-    font-size: 1.7rem;
-  }
+
   .motivationHighlight {
     color: var(--link-pink);
+  }
+
+  @media (min-width: 768px) {
+    width: 70%;
   }
 `;
 

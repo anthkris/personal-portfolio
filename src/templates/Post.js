@@ -11,8 +11,6 @@ import SEO from '../components/SEO';
 import Code from '../components/CodeBlock';
 
 const PostStyles = styled.section`
-  font-size: 1.3rem;
-  line-height: 1.8rem;
   padding: 2rem;
   .title {
     line-height: 1.2em;
@@ -93,7 +91,7 @@ const SinglePostPage = ({ data }) => {
   return (
     <>
       <SEO title={post.title} />
-      <PostStyles className="interior">
+      <PostStyles className="interior longForm">
         <BlockContent blocks={post._rawBody} serializers={serializers} />
       </PostStyles>
     </>

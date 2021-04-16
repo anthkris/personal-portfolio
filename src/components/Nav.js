@@ -109,12 +109,12 @@ const Trail = ({ open, children, ...props }) => {
     from: { opacity: 0, x: 20, height: 0 },
   });
   return (
-    <div className="trails-main" {...props}>
+    <div className='trails-main' {...props}>
       <ul className={open ? 'mobileNav' : 'mobileNavHidden'}>
         {trail.map(({ x, height, ...rest }, index) => (
           <animated.li
             key={`trail-li-${index}`}
-            className='trails-text'
+            className="trails-text"
             style={{
               ...rest,
               transform: x.interpolate((x) => `translate3d(0,${x}px,0)`),
@@ -137,54 +137,54 @@ const Nav = () => {
   }, []);
   return (
     <NavStyles>
-      <Link className="logoLink" to="/" onMouseEnter={trigger}>
+      <Link className='logoLink' to='/' onMouseEnter={trigger}>
         <animated.img
           style={style}
-          className="logo"
+          className='logo'
           src={logo}
-          alt="Home page"
+          alt='Home page'
         />
       </Link>
       <button
         onClick={toggleNav}
-        aria-haspopup='true'
-        aria-label='Open or Close the menu'
+        aria-haspopup="true"
+        aria-label="Open or Close the menu"
         aria-expanded={menuIsOpen ? 'true' : 'false'}
       >
         <Hamburger toggled={menuIsOpen} />
       </button>
       <Trail open={menuIsOpen}>
-        <Link activeClassName='active' to='/writing'>
+        <Link activeClassName="active" to="/writing">
           Writing
         </Link>
-        <Link activeClassName="active" to="/play">
+        <Link activeClassName='active' to='/play'>
           Play
         </Link>
-        <Link activeClassName="active" to="/explorables">
+        {/* <Link activeClassName="active" to="/explorables">
           Explorables
-        </Link>
-        <Link activeClassName="active" to="/about">
+        </Link> */}
+        <Link activeClassName='active' to='/about'>
           About
         </Link>
       </Trail>
-      <ul className='desktopNav'>
+      <ul className="desktopNav">
         <li>
-          <Link activeClassName='active' to='/writing'>
+          <Link activeClassName="active" to="/writing">
             Writing
           </Link>
         </li>
         <li>
-          <Link activeClassName="active" to="/play">
+          <Link activeClassName='active' to='/play'>
             Play
           </Link>
         </li>
-        <li>
+        {/* <li>
           <Link activeClassName="active" to="/explorables">
             Explorables
           </Link>
-        </li>
+        </li> */}
         <li>
-          <Link activeClassName="active" to="/about">
+          <Link activeClassName='active' to='/about'>
             About
           </Link>
         </li>

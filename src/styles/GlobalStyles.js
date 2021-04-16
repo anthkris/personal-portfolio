@@ -34,6 +34,16 @@ const GlobalStyles = createGlobalStyle`
     margin: 0 auto;
   }
 
+  .leadText {
+    font-size: 1.7rem;
+    line-height: 2rem;
+  }
+
+  .longForm {
+    font-size: 1.3rem;
+    line-height: 1.8rem;
+  }
+
   fieldset {
     border-color: rgba(0,0,0,0.1);
     border-width: 1px;

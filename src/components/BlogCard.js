@@ -1,12 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const BlogCardStyles = styled.article`
+const BlogCardStyles = styled.a`
+  display: block;
   margin: 0 auto;
   width: 80%;
   border: var(--black) solid 2px;
   padding: 2em;
   margin-bottom: 2em;
+  text-decoration: none;
   &:hover,
   &:focus {
     border-color: var(--link-pink);
@@ -18,22 +20,23 @@ const BlogCardStyles = styled.article`
   a {
     text-decoration: none;
   }
+  .postDescription {
+    line-height: 1.8rem;
+  }
 `;
 
 const BlogCard = ({ postSlug, postTitle, postDesc, postDate }) => (
   // console.log(postDate);
-  <BlogCardStyles>
-    <a href={`/writing/${postSlug}`}>
-      <h2 className='postTitle'>{postTitle}</h2>
-      <p className='postDate'>
-        {new Intl.DateTimeFormat('en-US', {
-          year: 'numeric',
-          month: 'long',
-          day: '2-digit',
-        }).format(new Date(postDate))}
-      </p>
-      <p className='postDescription'>{postDesc}</p>
-    </a>
+  <BlogCardStyles href={`/writing/${postSlug}`}>
+    <h2 className='postTitle'>{postTitle}</h2>
+    <p className='postDate'>
+      {new Intl.DateTimeFormat('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: '2-digit',
+      }).format(new Date(postDate))}
+    </p>
+    <p className='postDescription'>{postDesc}</p>
   </BlogCardStyles>
 );
 export default BlogCard;

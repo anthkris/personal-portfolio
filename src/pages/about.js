@@ -5,21 +5,15 @@ import Puppers from '../assets/images/Jazzy_and_Dash.jpg';
 
 const AboutPageStyles = styled.div`
   padding: 2rem;
-  font-size: 1.6rem;
   justify-content: space-between;
 
   section {
-    font-size: 1.2rem;
-    line-height: 1.5rem;
     @media (min-width: 768px) {
       width: 70%;
       margin: 0 auto;
     }
   }
-  .leadText {
-    font-size: 1.7rem;
-    line-height: 2rem;
-  }
+
   .motivationHighlight {
     color: var(--link-pink);
   }
@@ -40,7 +34,7 @@ const AboutPageStyles = styled.div`
 const AboutPage = () => (
   <>
     <SEO title="About" />
-    <AboutPageStyles className='interior'>
+    <AboutPageStyles className='interior longForm'>
       <figure className='imageSection'>
         <img
           className='pupperImg'
