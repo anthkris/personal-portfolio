@@ -6,7 +6,7 @@ const PortfolioCardStyles = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 1rem;
+  font-size: 1.2rem;
   padding: 2rem;
   margin-top: 4rem;
 
@@ -31,16 +31,19 @@ const PortfolioCardStyles = styled.div`
   .cardLink {
     text-decoration: none;
   }
+  @media screen and (min-width: 768px) {
+    font-size: 1rem;
+  }
 `;
 
 const PortfolioCard = ({ imgSrc, imgAlt, itemTitle, itemDesc, itemUrl }) => (
   <PortfolioCardStyles>
-    <a href={itemUrl} className="cardLink">
-      <img className="portfolioItemImg" src={imgSrc} alt={imgAlt} />
+    <a href={itemUrl} className='cardLink'>
+      <img className='portfolioItemImg' src={imgSrc} alt={imgAlt} />
       <h4>{itemTitle}</h4>
-      <p className='itemDescription'>{itemDesc}</p>
-      <span className='portfolioItemLink'>
-        Give it a go <span className="goArrow">L</span>
+      <p className="itemDescription">{itemDesc}</p>
+      <span className="portfolioItemLink">
+        Give it a go <span className='goArrow'>L</span>
       </span>
     </a>
   </PortfolioCardStyles>

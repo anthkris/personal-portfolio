@@ -154,6 +154,9 @@ const Nav = () => {
         <Hamburger toggled={menuIsOpen} />
       </button>
       <Trail open={menuIsOpen}>
+        <Link activeClassName="active" to="/">
+          Home
+        </Link>
         <Link activeClassName="active" to="/writing">
           Writing
         </Link>
@@ -168,6 +171,11 @@ const Nav = () => {
         </Link>
       </Trail>
       <ul className="desktopNav">
+        <li>
+          <Link activeClassName="active" to="/">
+            Home
+          </Link>
+        </li>
         <li>
           <Link activeClassName="active" to="/writing">
             Writing
