@@ -1,4 +1,12 @@
 const dotenv = require('dotenv');
+const PortableText = require('@sanity/block-content-to-html');
+const imageUrlBuilder = require('@sanity/image-url');
+
+const { isFuture } = require('date-fns');
+const {
+  getBlogUrl,
+  filterOutDocsPublishedInTheFuture,
+} = require('./src/utils/rssFeedHelpers');
 
 dotenv.config({ path: '.env' });
 
@@ -43,6 +51,64 @@ module.exports = {
         theme_color: `#37ABD4`,
         display: `standalone`,
         icon: `src/assets/images/knanthony_logo.svg`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        query: `
+        {
+          site {
+            siteMetadata {
+              title
+              description
+              siteUrl
+              site_url: siteUrl
+            }
+          }
+        }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allSanityPost = [] } }) =>
+              allSanityPost.edges
+                .filter(({ node }) => filterOutDocsPublishedInTheFuture(node))
+                .filter(({ node }) => node.slug)
+                .map(({ node }) => {
+                  const { title, publishedAt, slug, description } = node;
+                  const url =
+                    site.siteMetadata.siteUrl + getBlogUrl(slug.current);
+                  return {
+                    title,
+                    date: publishedAt,
+                    url,
+                    guid: url,
+                    description,
+                  };
+                }),
+            query: `{
+              allSanityPost(sort: {fields: publishedAt, order: DESC}) {
+                edges {
+                  node {
+                    title
+                    publishedAt
+                    slug {
+                      current
+                    }
+                    description
+                  }
+                }
+              }
+            }
+            `,
+            output: '/rss.xml',
+            title: 'K. Anthony Blog',
+            // optional configuration to insert feed reference in pages:
+            // if `string` is used, it will be used to create RegExp and then test if pathname of
+            // current page satisfied this regular expression;
+            // if not provided or `undefined`, all pages will have feed reference inserted
+          },
+        ],
       },
     },
   ],

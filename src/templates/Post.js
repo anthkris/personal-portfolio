@@ -8,7 +8,6 @@ import YouTube from 'react-youtube';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import SEO from '../components/SEO';
-import Code from '../components/CodeBlock';
 
 const PostStyles = styled.section`
   padding: 2rem;
@@ -46,7 +45,7 @@ const SinglePostPage = ({ data }) => {
   // console.log('Post: ', post);
   // From: https://stackoverflow.com/questions/63563616/passing-css-classes-into-sanity-block-content-root
   const overrides = {
-    h2: (props) => <h2 className="title" {...props} />,
+    h2: (props) => <h2 className='title' {...props} />,
   };
 
   const serializers = {
@@ -91,7 +90,7 @@ const SinglePostPage = ({ data }) => {
   return (
     <>
       <SEO title={post.title} />
-      <PostStyles className="interior longForm">
+      <PostStyles className='interior longForm'>
         <BlockContent blocks={post._rawBody} serializers={serializers} />
       </PostStyles>
     </>

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
-import { FiGithub, FiTwitter, FiLinkedin } from 'react-icons/fi';
+import { FiGithub, FiTwitter, FiLinkedin, FiRss } from 'react-icons/fi';
 
 const FooterStyles = styled.footer`
   background: var(--black);
@@ -52,22 +52,26 @@ const FooterStyles = styled.footer`
 
 const Footer = () => (
   <FooterStyles>
-    <div className='interior'>
-      <p className="copyright">&copy; 2021 Kristin Anthony</p>
-      <section className='social'>
-        <a href='https://github.com/anthkris/'>
-          <span className='sr-only'>Github</span>
+    <div className="interior">
+      <p className='copyright'>&copy; 2021 Kristin Anthony</p>
+      <section className="social">
+        <a href="https://github.com/anthkris/">
+          <span className="sr-only">Github</span>
           <FiGithub />
         </a>
-        <a href='https://www.linkedin.com/in/anthkris/'>
-          <span className='sr-only'>LinkedIn</span>
+        <a href="https://www.linkedin.com/in/anthkris/">
+          <span className="sr-only">LinkedIn</span>
           <FiLinkedin />
         </a>
-        <a href='https://twitter.com/anthkris'>
-          <span className='sr-only'>Twitter</span>
+        <a href="https://twitter.com/anthkris">
+          <span className="sr-only">Twitter</span>
           <FiTwitter />
         </a>
-        <AnchorLink className='backToTop' to='#reach-skip-nav'>
+        <a href="https://knanthony.com/rss.xml">
+          <span className="sr-only">RSS Feed</span>
+          <FiRss />
+        </a>
+        <AnchorLink className="backToTop" to="#reach-skip-nav">
           Back to Top ↑
         </AnchorLink>
       </section>

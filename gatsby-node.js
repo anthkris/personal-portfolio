@@ -1,6 +1,7 @@
-import { graphql } from 'gatsby';
-import path, { resolve } from 'path';
-import fetch from 'isomorphic-fetch';
+const graphql = require('gatsby');
+
+const path = require(`path`);
+const fetch = require('isomorphic-fetch');
 
 const turnPostsIntoPages = async ({ graphql, actions }) => {
   // 1. Get a template for this page
