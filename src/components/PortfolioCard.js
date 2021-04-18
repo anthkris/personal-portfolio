@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const PortfolioCardStyles = styled.div`
@@ -38,15 +39,23 @@ const PortfolioCardStyles = styled.div`
 
 const PortfolioCard = ({ imgSrc, imgAlt, itemTitle, itemDesc, itemUrl }) => (
   <PortfolioCardStyles>
-    <a href={itemUrl} className='cardLink'>
-      <img className='portfolioItemImg' src={imgSrc} alt={imgAlt} />
+    <a href={itemUrl} className="cardLink">
+      <img className="portfolioItemImg" src={imgSrc} alt={imgAlt} />
       <h4>{itemTitle}</h4>
       <p className="itemDescription">{itemDesc}</p>
       <span className="portfolioItemLink">
-        Give it a go <span className='goArrow'>L</span>
+        Give it a go <span className="goArrow">L</span>
       </span>
     </a>
   </PortfolioCardStyles>
 );
 
 export default PortfolioCard;
+
+PortfolioCard.propTypes = {
+  imgSrc: PropTypes.string.isRequired,
+  itemTitle: PropTypes.string.isRequired,
+  itemDesc: PropTypes.string.isRequired,
+  itemUrl: PropTypes.string.isRequired,
+  imgAlt: PropTypes.string.isRequired,
+};

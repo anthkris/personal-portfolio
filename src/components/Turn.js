@@ -7,9 +7,9 @@ export const Turn = (props) => (
     {...props}
     render={(o) => (
       <div
-        className='hamburger-react'
-        aria-hidden='true'
-        data-testid='turn'
+        className="hamburger-react"
+        aria-hidden="true"
+        data-testid="turn"
         style={o.burgerStyles}
       >
         <div
@@ -26,6 +26,7 @@ export const Turn = (props) => (
                 : 'none'
             }`,
           }}
+          data-testid="burger-bars"
         />
 
         <div

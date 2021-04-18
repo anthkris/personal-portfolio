@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { FiGithub, FiTwitter, FiLinkedin } from 'react-icons/fi';
 
@@ -71,3 +72,7 @@ const Connect = ({ name }) => (
 );
 
 export default Connect;
+
+Connect.propTypes = {
+  name: PropTypes.string.isRequired,
+};

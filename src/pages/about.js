@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { StaticImage } from 'gatsby-plugin-image';
 import SEO from '../components/SEO';
-import Puppers from '../assets/images/Jazzy_and_Dash.jpg';
 
 const AboutPageStyles = styled.div`
   padding: 2rem;
@@ -47,31 +46,31 @@ const AboutPageStyles = styled.div`
 
 const AboutPage = () => (
   <>
-    <SEO title='About' />
+    <SEO title="About" />
     <AboutPageStyles className="interior longForm">
       <figure className="imageSection">
         <StaticImage
           imgClassName="pupperImg"
           src="../assets/images/Jazzy_and_Dash.jpg"
           placeholder="blurred"
-          loading='eager'
-          alt='Jazzy and Dashwood (dogs)'
-          height='400'
-          width='800'
+          loading="eager"
+          alt="Jazzy and Dashwood (dogs)"
+          height="400"
+          width="800"
         />
-        <figcaption className='imageCaption'>
+        <figcaption className="imageCaption">
           I don't have a headshot, so here are my dogs, Dashwood and Jazzy.{' '}
           <span>Sometimes they help (but mostly, they don’t).</span>
         </figcaption>
       </figure>
       <section>
-        <p className='leadText'>
+        <p className="leadText">
           I am fundamentally motivated to{' '}
-          <span className='motivationHighlight'>learn new things</span> and
+          <span className="motivationHighlight">learn new things</span> and
           display that learning through projects,{' '}
-          <span className='motivationHighlight'>meet challenges</span> and make
+          <span className="motivationHighlight">meet challenges</span> and make
           progress towards goals, and{' '}
-          <span className='motivationHighlight'>make an impact</span> on
+          <span className="motivationHighlight">make an impact</span> on
           processes, people, and organizations.
         </p>
         <p>

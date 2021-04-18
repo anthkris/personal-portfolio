@@ -35,7 +35,7 @@ const PlayPage = ({ data }) => {
   return (
     <>
       <SEO title="Play" />
-      <PlayProjectStyles className='interior'>
+      <PlayProjectStyles className="interior">
         <div className="playProjectCards">{playProjectCards}</div>
       </PlayProjectStyles>
     </>

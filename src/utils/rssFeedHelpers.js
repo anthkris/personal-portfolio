@@ -1,5 +1,5 @@
 // From https://gist.github.com/kmelve/0e4de671d08769cc7c60b948f7e15a29 d
-const { format, isFuture } = require('date-fns');
+const { isFuture } = require('date-fns');
 
 function cn(...args) {
   return args.filter(Boolean).join(' ');

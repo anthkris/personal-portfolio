@@ -53,7 +53,7 @@ const FooterStyles = styled.footer`
 const Footer = () => (
   <FooterStyles>
     <div className="interior">
-      <p className='copyright'>&copy; 2021 Kristin Anthony</p>
+      <p className="copyright">&copy; 2021 Kristin Anthony</p>
       <section className="social">
         <a href="https://github.com/anthkris/">
           <span className="sr-only">Github</span>

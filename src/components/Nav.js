@@ -1,4 +1,6 @@
+/* eslint-disable no-shadow */
 import React, { useState, useCallback } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 import { useTrail, animated } from 'react-spring';
@@ -109,7 +111,7 @@ const Trail = ({ open, children, ...props }) => {
     from: { opacity: 0, x: 20, height: 0 },
   });
   return (
-    <div className='trails-main' {...props}>
+    <div className="trails-main" {...props}>
       <ul className={open ? 'mobileNav' : 'mobileNavHidden'}>
         {trail.map(({ x, height, ...rest }, index) => (
           <animated.li
@@ -137,15 +139,16 @@ const Nav = () => {
   }, []);
   return (
     <NavStyles>
-      <Link className='logoLink' to='/' onMouseEnter={trigger}>
+      <Link className="logoLink" to="/" onMouseEnter={trigger}>
         <animated.img
           style={style}
-          className='logo'
+          className="logo"
           src={logo}
-          alt='Home page'
+          alt="Home page"
         />
       </Link>
       <button
+        type="button"
         onClick={toggleNav}
         aria-haspopup="true"
         aria-label="Open or Close the menu"
@@ -153,24 +156,24 @@ const Nav = () => {
       >
         <Hamburger toggled={menuIsOpen} />
       </button>
-      <Trail open={menuIsOpen}>
+      <Trail open={menuIsOpen} data-testid="mobileNav">
         <Link activeClassName="active" to="/">
           Home
         </Link>
         <Link activeClassName="active" to="/writing">
           Writing
         </Link>
-        <Link activeClassName='active' to='/play'>
+        <Link activeClassName="active" to="/play">
           Play
         </Link>
         {/* <Link activeClassName="active" to="/explorables">
           Explorables
         </Link> */}
-        <Link activeClassName='active' to='/about'>
+        <Link activeClassName="active" to="/about">
           About
         </Link>
       </Trail>
-      <ul className="desktopNav">
+      <ul className="desktopNav" data-testid="desktopNav">
         <li>
           <Link activeClassName="active" to="/">
             Home
@@ -182,7 +185,7 @@ const Nav = () => {
           </Link>
         </li>
         <li>
-          <Link activeClassName='active' to='/play'>
+          <Link activeClassName="active" to="/play">
             Play
           </Link>
         </li>
@@ -192,7 +195,7 @@ const Nav = () => {
           </Link>
         </li> */}
         <li>
-          <Link activeClassName='active' to='/about'>
+          <Link activeClassName="active" to="/about">
             About
           </Link>
         </li>
@@ -202,3 +205,9 @@ const Nav = () => {
 };
 
 export default Nav;
+
+Trail.propTypes = {
+  open: PropTypes.bool.isRequired,
+  children: PropTypes.object,
+  tagline: PropTypes.string,
+};

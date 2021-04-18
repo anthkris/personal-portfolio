@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Nav from './Nav';
 
@@ -59,22 +60,22 @@ const PageHead = ({
   tagline = 'Makes Work you can Play',
 }) => (
   <PageHeadStyles>
-    <div className='interior'>
+    <div className="interior">
       <Nav />
       {!postTitle && (
         <>
           <h1>
             Kristin
-            <span className='mark'>{markText}</span>
+            <span className="mark">{markText}</span>
           </h1>
           <h2>{tagline}</h2>
         </>
       )}
       {postTitle && (
         <>
-          <h1 className='postTitle'>{postTitle}</h1>
-          <p className='backToWriting'>
-            <Link to='/writing'>
+          <h1 className="postTitle">{postTitle}</h1>
+          <p className="backToWriting">
+            <Link to="/writing">
               <span className="goArrow">M</span> Back to all writing
             </Link>
           </p>
@@ -85,3 +86,9 @@ const PageHead = ({
 );
 
 export default PageHead;
+
+PageHead.propTypes = {
+  postTitle: PropTypes.string,
+  markText: PropTypes.string,
+  tagline: PropTypes.string,
+};

@@ -1,0 +1,17 @@
+{
+  "parser": "babel-eslint",
+  "plugins": ["jsx-a11y", "prettier"],
+  "extends": ["eslint:recommended", "plugin:react/recommended", "wesbos", "plugin:prettier/recommended", "prettier/react"],
+  "rules": {
+    "quotes": [
+      "error",
+      "single",
+      { "avoidEscape": true, "allowTemplateLiterals": false }
+    ],
+    "prettier/prettier": ["error"],
+    "react/jsx-props-no-spreading": "off"
+  },
+  "globals": {
+    "graphql": true
+  }
+}

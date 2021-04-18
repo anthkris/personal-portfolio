@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const BlogCardStyles = styled.a`
@@ -28,15 +29,22 @@ const BlogCardStyles = styled.a`
 const BlogCard = ({ postSlug, postTitle, postDesc, postDate }) => (
   // console.log(postDate);
   <BlogCardStyles href={`/writing/${postSlug}`}>
-    <h2 className='postTitle'>{postTitle}</h2>
-    <p className='postDate'>
+    <h2 className="postTitle">{postTitle}</h2>
+    <p className="postDate">
       {new Intl.DateTimeFormat('en-US', {
         year: 'numeric',
         month: 'long',
         day: '2-digit',
       }).format(new Date(postDate))}
     </p>
-    <p className='postDescription'>{postDesc}</p>
+    <p className="postDescription">{postDesc}</p>
   </BlogCardStyles>
 );
 export default BlogCard;
+
+BlogCard.propTypes = {
+  postSlug: PropTypes.string.isRequired,
+  postTitle: PropTypes.string.isRequired,
+  postDesc: PropTypes.string.isRequired,
+  postDate: PropTypes.string.isRequired,
+};

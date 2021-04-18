@@ -27,25 +27,36 @@ export const Burger = ({
   const barHeightRaw = width / 12;
   const barHeight = Math.round(barHeightRaw);
 
-  const space = distance === 'lg' ? 0.25 : distance === 'sm' ? 0.75 : 0.5;
+  let space;
+  if (distance === 'lg') {
+    space = 0.25;
+  } else if (distance === 'sm') {
+    space = 0.75;
+  } else {
+    space = 0.5;
+  }
   const marginRaw = width / (lines * (space + (lines === 3 ? 1 : 1.25)));
   const margin = Math.round(marginRaw);
 
   const height = barHeight * lines + margin * (lines - 1);
   const topOffset = Math.round((area - height) / 2);
 
-  const translate =
-    lines === 3
-      ? distance === 'lg'
-        ? 4.0425
-        : distance === 'sm'
-        ? 5.1625
-        : 4.6325
-      : distance === 'lg'
-      ? 6.7875
-      : distance === 'sm'
-      ? 8.4875
-      : 7.6675;
+  let translate;
+  if (lines === 3) {
+    if (distance === 'lg') {
+      translate = 4.0425;
+    } else if (distance === 'sm') {
+      translate = 5.1625;
+    } else {
+      translate = 4.6325;
+    }
+  } else if (distance === 'lg') {
+    translate = 6.7875;
+  } else if (distance === 'sm') {
+    translate = 8.4875;
+  } else {
+    translate = 7.6675;
+  }
   const deviation =
     (barHeightRaw - barHeight + (marginRaw - margin)) / (lines === 3 ? 1 : 2);
   const move = parseFloat((width / translate - deviation / (4 / 3)).toFixed(2));

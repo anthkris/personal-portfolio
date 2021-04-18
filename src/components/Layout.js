@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { SkipNavLink, SkipNavContent } from '@reach/skip-nav';
 import '@reach/skip-nav/styles.css'; // this will auto show and hide the link on focus
@@ -54,3 +55,11 @@ const Layout = ({ children }) => {
 };
 
 export default Layout;
+
+Layout.propTypes = {
+  children: PropTypes.shape({
+    data: PropTypes.object,
+    props: PropTypes.object.isRequired,
+    location: PropTypes.object,
+  }).isRequired,
+};

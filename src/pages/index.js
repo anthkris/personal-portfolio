@@ -74,10 +74,10 @@ const HomePage = () => (
     <HalfPageStyles>
       <div className="interior">
         <section>
-          <p className='leadText'>
+          <p className="leadText">
             Howdy! <Emoji symbol="👋🏽" label="" />
           </p>
-          <p className='leadText'>
+          <p className="leadText">
             I’m a front-end engineer at Amazon with a learning experience design
             background. In my personal work, I blend the two worlds to create
             story-focused learning experiences that help solve problems for
@@ -118,7 +118,7 @@ const HomePage = () => (
       </div>
     </PortfolioStyles>
     <OtherProjectStyles>
-      <div className='interior'>
+      <div className="interior">
         <h3>… and lots of other resources, too!</h3>
         <div className="otherProjectCards">
           <PlainCard

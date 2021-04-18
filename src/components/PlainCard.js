@@ -1,5 +1,7 @@
+// eslint-disable react/jsx-props-no-spreading
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import SanityImage from 'gatsby-plugin-sanity-image';
 
 const PlainCardStyles = styled.a`
@@ -34,8 +36,16 @@ const PlainCard = ({ imgAsset, itemTitle, itemDesc, itemUrl, imgAlt }) => (
         className="cardImg"
       />
     )}
-    <h4 className='itemTitle'>{itemTitle}</h4>
-    <p className='itemDescription'>{itemDesc}</p>
+    <h4 className="itemTitle">{itemTitle}</h4>
+    <p className="itemDescription">{itemDesc}</p>
   </PlainCardStyles>
 );
 export default PlainCard;
+
+PlainCard.propTypes = {
+  imgAsset: PropTypes.object,
+  itemTitle: PropTypes.string.isRequired,
+  itemDesc: PropTypes.string.isRequired,
+  itemUrl: PropTypes.string.isRequired,
+  imgAlt: PropTypes.string,
+};
