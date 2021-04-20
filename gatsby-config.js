@@ -1,8 +1,5 @@
 const dotenv = require('dotenv');
-const PortableText = require('@sanity/block-content-to-html');
-const imageUrlBuilder = require('@sanity/image-url');
 
-const { isFuture } = require('date-fns');
 const {
   getBlogUrl,
   filterOutDocsPublishedInTheFuture,
@@ -12,10 +9,10 @@ dotenv.config({ path: '.env' });
 
 module.exports = {
   siteMetadata: {
-    title: `K. Anthony Portfolio`,
-    siteUrl: `https://knanthony.com`,
-    description: `Kristin is making Work you can Play`,
-    twitter: `@anthkris`,
+    title: 'K. Anthony Portfolio',
+    siteUrl: 'https://knanthony.com',
+    description: 'Kristin is making Work you can Play',
+    twitter: '@anthkris',
   },
   plugins: [
     'gatsby-plugin-styled-components',
@@ -29,6 +26,16 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-google-fonts',
+      options: {
+        fonts: [
+          'fredoka one',
+          'lato:400,400i,700', // you can also specify font weights and styles
+        ],
+        display: 'swap',
+      },
+    },
+    {
       resolve: 'gatsby-plugin-sanity-image',
       options: {
         // Sanity project info (required)
@@ -36,25 +43,26 @@ module.exports = {
         dataset: process.env.SANITY_DATASET,
       },
     },
-    `gatsby-plugin-image`,
-    `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`,
+    'gatsby-plugin-image',
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: 'gatsby-plugin-manifest',
       options: {
-        name: `K. Anthony Portfolio`,
-        short_name: `KAnthonyPortfolio`,
-        description: `Kristin makes work you can play. Find out more on their portfolio.`,
-        lang: `en`,
-        start_url: `/`,
-        background_color: `#F4F4F4`,
-        theme_color: `#37ABD4`,
-        display: `standalone`,
-        icon: `src/assets/images/knanthony_logo.svg`,
+        name: 'K. Anthony Portfolio',
+        short_name: 'KAnthonyPortfolio',
+        description:
+          'Kristin makes work you can play. Find out more on their portfolio.',
+        lang: 'en',
+        start_url: '/',
+        background_color: '#F4F4F4',
+        theme_color: '#37ABD4',
+        display: 'standalone',
+        icon: 'src/assets/images/knanthony_logo.svg',
       },
     },
     {
-      resolve: `gatsby-plugin-feed`,
+      resolve: 'gatsby-plugin-feed',
       options: {
         query: `
         {

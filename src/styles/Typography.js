@@ -1,33 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
-import fredokaFont from '../assets/fonts/fredoka-one-v8-latin-regular.woff';
-import latoRegular from '../assets/fonts/lato-v17-latin-regular.woff';
-import latoBold from '../assets/fonts/lato-v17-latin-700.woff';
-import latoItalic from '../assets/fonts/lato-v17-latin-italic.woff';
-
 const Typography = createGlobalStyle`
-  @font-face {
-    font-family: 'Fredoka One';
-    src: url(${fredokaFont});
-  }
-  @font-face {
-    font-family: 'Lato';
-    font-style: italic;
-    font-weight: 400;
-    src: url(${latoItalic});
-  }
-  @font-face {
-    font-family: 'Lato';
-    font-size: normal;
-    font-weight: 400;
-    src: url(${latoRegular});
-  }
-  @font-face {
-    font-family: 'Lato';
-    font-size: normal;
-    font-weight: 700;
-    src: url(${latoBold});
-  }
   html {
     font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: var(--black);

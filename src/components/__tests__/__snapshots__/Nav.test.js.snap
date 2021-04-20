@@ -348,3 +348,352 @@ exports[`Nav renders the desktopNav top nav on desktop 1`] = `
   </ul>
 </nav>
 `;
+
+exports[`Nav renders the mobileNav top nav on mobile 1`] = `
+.c0 {
+  margin-bottom: 3rem;
+  font-family: 'Fredoka One';
+  font-size: 1rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.c0 button {
+  background: transparent;
+  border: none;
+}
+
+.c0 .mobileNavHidden {
+  display: none;
+}
+
+.c0 .mobileNav {
+  display: block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: right;
+}
+
+.c0 .desktopNav {
+  display: none;
+}
+
+.c0 li {
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1;
+  padding: 0.5rem 0px;
+}
+
+.c0 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: var(--black);
+  padding: 0.3rem 0;
+}
+
+.c0 a:hover,
+.c0 a:focus,
+.c0 a.active {
+  background: var(--link-pink);
+  color: #fff;
+}
+
+.c0 .logoLink:hover,
+.c0 .logoLink:focus {
+  background: transparent;
+}
+
+.c0 .logo {
+  max-width: 50px;
+  width: 100%;
+  min-width: 40px;
+}
+
+.c0 .trails-main {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  -webkit-flex-basis: 100%;
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
+  font-size: 1.4rem;
+}
+
+.c0 .trails-text {
+  position: relative;
+  width: 100%;
+  will-change: transform,opacity;
+  overflow: hidden;
+}
+
+.c0 .trails-text > div {
+  overflow: hidden;
+}
+
+@media screen and (min-width:768px) {
+  .c0 button {
+    display: none;
+  }
+
+  .c0 .mobileNav,
+  .c0 .trails-main {
+    display: none;
+  }
+
+  .c0 .desktopNav {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    text-align: center;
+    list-style: none;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-top: --6rem;
+    -webkit-flex-basis: initial;
+    -ms-flex-preferred-size: initial;
+    flex-basis: initial;
+    font-size: initial;
+  }
+
+  .c0 li {
+    padding: 0px 5px;
+  }
+}
+
+<nav
+  className="c0"
+>
+  <a
+    className="logoLink"
+    href="/"
+    onMouseEnter={[Function]}
+  >
+    <img
+      alt="Home page"
+      className="logo"
+      src="test-file-stub"
+      style={Object {}}
+    />
+  </a>
+  <button
+    aria-expanded="false"
+    aria-haspopup="true"
+    aria-label="Open or Close the menu"
+    onClick={[Function]}
+    type="button"
+  >
+    <div
+      aria-hidden="true"
+      className="hamburger-react"
+      data-testid="turn"
+      style={
+        Object {
+          "cursor": "pointer",
+          "height": "48px",
+          "outline": "none",
+          "position": "relative",
+          "transition": "0.4s cubic-bezier(0, 0, 0, 1)",
+          "userSelect": "none",
+          "width": "48px",
+        }
+      }
+    >
+      <div
+        data-testid="burger-bars"
+        style={
+          Object {
+            "background": "currentColor",
+            "height": "3px",
+            "left": "8px",
+            "position": "absolute",
+            "top": "13px",
+            "transform": "none",
+            "transition": "0.4s cubic-bezier(0, 0, 0, 1)",
+            "width": "32px",
+          }
+        }
+      />
+      <div
+        style={
+          Object {
+            "background": "currentColor",
+            "height": "3px",
+            "left": "8px",
+            "position": "absolute",
+            "top": "23px",
+            "transform": "none",
+            "transition": "0.2s cubic-bezier(0, 0, 0, 1)",
+            "width": "32px",
+          }
+        }
+      />
+      <div
+        style={
+          Object {
+            "background": "currentColor",
+            "height": "3px",
+            "left": "8px",
+            "position": "absolute",
+            "top": "33px",
+            "transform": "none",
+            "transition": "0.4s cubic-bezier(0, 0, 0, 1)",
+            "width": "32px",
+          }
+        }
+      />
+    </div>
+  </button>
+  <div
+    className="trails-main"
+    data-testid="mobileNav"
+  >
+    <ul
+      className="mobileNavHidden"
+    >
+      <li
+        className="trails-text"
+        style={
+          Object {
+            "opacity": 0,
+            "transform": "translate3d(0,20px,0)",
+          }
+        }
+      >
+        <span
+          style={
+            Object {
+              "height": 0,
+            }
+          }
+        >
+          <a
+            href="/"
+          >
+            Home
+          </a>
+        </span>
+      </li>
+      <li
+        className="trails-text"
+        style={
+          Object {
+            "opacity": 0,
+            "transform": "translate3d(0,20px,0)",
+          }
+        }
+      >
+        <span
+          style={
+            Object {
+              "height": 0,
+            }
+          }
+        >
+          <a
+            href="/writing"
+          >
+            Writing
+          </a>
+        </span>
+      </li>
+      <li
+        className="trails-text"
+        style={
+          Object {
+            "opacity": 0,
+            "transform": "translate3d(0,20px,0)",
+          }
+        }
+      >
+        <span
+          style={
+            Object {
+              "height": 0,
+            }
+          }
+        >
+          <a
+            href="/play"
+          >
+            Play
+          </a>
+        </span>
+      </li>
+      <li
+        className="trails-text"
+        style={
+          Object {
+            "opacity": 0,
+            "transform": "translate3d(0,20px,0)",
+          }
+        }
+      >
+        <span
+          style={
+            Object {
+              "height": 0,
+            }
+          }
+        >
+          <a
+            href="/about"
+          >
+            About
+          </a>
+        </span>
+      </li>
+    </ul>
+  </div>
+  <ul
+    className="desktopNav"
+    data-testid="desktopNav"
+  >
+    <li>
+      <a
+        href="/"
+      >
+        Home
+      </a>
+    </li>
+    <li>
+      <a
+        href="/writing"
+      >
+        Writing
+      </a>
+    </li>
+    <li>
+      <a
+        href="/play"
+      >
+        Play
+      </a>
+    </li>
+    <li>
+      <a
+        href="/about"
+      >
+        About
+      </a>
+    </li>
+  </ul>
+</nav>
+`;

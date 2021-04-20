@@ -208,6 +208,6 @@ export default Nav;
 
 Trail.propTypes = {
   open: PropTypes.bool.isRequired,
-  children: PropTypes.object,
+  children: PropTypes.array,
   tagline: PropTypes.string,
 };
