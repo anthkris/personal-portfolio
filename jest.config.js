@@ -14,9 +14,7 @@ module.exports = {
     '<rootDir>.*/public',
     '/coverage/',
   ],
-  transformIgnorePatterns: [
-    'node_modules/(?!(gatsby-plugin-sanity-image|gatsby)/)',
-  ],
+  transformIgnorePatterns: ['node_modules/(?!(gatsby)/)'],
   globals: {
     __PATH_PREFIX__: '',
   },

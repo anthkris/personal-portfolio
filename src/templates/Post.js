@@ -1,4 +1,5 @@
 import { graphql } from 'gatsby';
+import PropTypes from 'prop-types';
 import React from 'react';
 import Image from 'gatsby-plugin-sanity-image';
 import styled from 'styled-components';
@@ -42,10 +43,39 @@ const PostStyles = styled.section`
 
 const SinglePostPage = ({ data }) => {
   const { post } = data;
+  const h2Override = ({ children, ...props }) => (
+    <h2 className="title" {...props}>
+      {children}
+    </h2>
+  );
+  const imgSerializer = ({ node }) => (
+    // console.log('is this working? image');
+    <figure>
+      <Image {...node} />
+      <figcaption>{node.title}</figcaption>
+    </figure>
+  );
+  const ytSerializer = ({ node }) => {
+    const { url } = node;
+    const id = getYouTubeId(url);
+    return <YouTube videoId={id} />;
+  };
+  const codeSerializer = ({ node }) => {
+    if (!node || !node.code) {
+      return null;
+    }
+    const { language, code } = node;
+    return (
+      <SyntaxHighlighter language={language || 'text'} style={docco}>
+        {code}
+      </SyntaxHighlighter>
+    );
+  };
+  const markSerializer = ({ children }) => <strong>{children}</strong>;
   // console.log('Post: ', post);
   // From: https://stackoverflow.com/questions/63563616/passing-css-classes-into-sanity-block-content-root
   const overrides = {
-    h2: (props) => <h2 className='title' {...props} />,
+    h2: h2Override,
   };
 
   const serializers = {
@@ -58,39 +88,19 @@ const SinglePostPage = ({ data }) => {
             overrides[props.node.style]({ children: props.children })
           : // otherwise, fallback to the provided default with all props
             BlockContent.defaultSerializers.types.block(props),
-      image: ({ node }) => (
-        // console.log('is this working? image');
-        <figure>
-          <Image {...node} />
-          <figcaption>{node.title}</figcaption>
-        </figure>
-      ),
-      youtube: ({ node }) => {
-        const { url } = node;
-        const id = getYouTubeId(url);
-        return <YouTube videoId={id} />;
-      },
-      code: ({ node }) => {
-        if (!node || !node.code) {
-          return null;
-        }
-        const { language, code } = node;
-        return (
-          <SyntaxHighlighter language={language || 'text'} style={docco}>
-            {code}
-          </SyntaxHighlighter>
-        );
-      },
+      image: imgSerializer,
+      youtube: ytSerializer,
+      code: codeSerializer,
     },
     marks: {
-      strong: (props) => <strong>{props.children}</strong>,
+      strong: markSerializer,
     },
   };
 
   return (
     <>
       <SEO title={post.title} />
-      <PostStyles className='interior longForm'>
+      <PostStyles className="interior longForm">
         <BlockContent blocks={post._rawBody} serializers={serializers} />
       </PostStyles>
     </>
@@ -113,3 +123,11 @@ export const query = graphql`
 `;
 
 export default SinglePostPage;
+
+SinglePostPage.propTypes = {
+  data: PropTypes.shape({
+    post: PropTypes.object,
+  }).isRequired,
+  node: PropTypes.object,
+  children: PropTypes.object,
+};

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const PageStyles = styled.div`
@@ -9,3 +10,7 @@ const PageStyles = styled.div`
 const Page = ({ children }) => <PageStyles>{children}</PageStyles>;
 
 export default Page;
+
+Page.propTypes = {
+  children: PropTypes.object,
+};

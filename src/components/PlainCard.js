@@ -24,22 +24,37 @@ const PlainCardStyles = styled.a`
   }
 `;
 
-const PlainCard = ({ imgAsset, itemTitle, itemDesc, itemUrl, imgAlt }) => (
-  // console.log(imgAlt);
-  <PlainCardStyles href={itemUrl}>
-    {imgAsset && (
-      <SanityImage
-        {...imgAsset}
-        width={700}
-        alt={`${imgAlt}`}
-        height={600}
-        className="cardImg"
-      />
-    )}
-    <h4 className="itemTitle">{itemTitle}</h4>
-    <p className="itemDescription">{itemDesc}</p>
-  </PlainCardStyles>
-);
+const PlainCard = ({
+  imgAsset,
+  itemTitle,
+  itemDesc,
+  itemUrl,
+  imgAlt,
+  whichHeadingSize,
+}) => {
+  // console.log(imgAsset);
+  const cardHeading =
+    whichHeadingSize === 'h3' ? (
+      <h3 className="itemTitle">{itemTitle}</h3>
+    ) : (
+      <h4 className="itemTitle">{itemTitle}</h4>
+    );
+  return (
+    <PlainCardStyles href={itemUrl}>
+      {imgAsset && (
+        <SanityImage
+          {...imgAsset}
+          width={700}
+          alt={`${imgAlt}`}
+          height={600}
+          className="cardImg"
+        />
+      )}
+      {cardHeading}
+      <p className="itemDescription">{itemDesc}</p>
+    </PlainCardStyles>
+  );
+};
 export default PlainCard;
 
 PlainCard.propTypes = {
@@ -48,4 +63,5 @@ PlainCard.propTypes = {
   itemDesc: PropTypes.string.isRequired,
   itemUrl: PropTypes.string.isRequired,
   imgAlt: PropTypes.string,
+  whichHeadingSize: PropTypes.string,
 };

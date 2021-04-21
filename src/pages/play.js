@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import SEO from '../components/SEO';
@@ -30,6 +31,7 @@ const PlayPage = ({ data }) => {
       itemUrl={project.projectUrl}
       imgAsset={project.image}
       imgAlt={project.altText}
+      whichHeadingSize="h3"
     />
   ));
   return (
@@ -63,3 +65,9 @@ export const query = graphql`
 `;
 
 export default PlayPage;
+
+PlayPage.propTypes = {
+  data: PropTypes.shape({
+    play: PropTypes.object,
+  }).isRequired,
+};

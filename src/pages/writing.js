@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import SEO from '../components/SEO';
@@ -22,6 +23,12 @@ const WritingPage = ({ data }) => {
 };
 
 export default WritingPage;
+
+WritingPage.propTypes = {
+  data: PropTypes.shape({
+    posts: PropTypes.object,
+  }).isRequired,
+};
 
 export const query = graphql`
   query PostQuery {
