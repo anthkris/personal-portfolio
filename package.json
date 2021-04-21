@@ -23,7 +23,7 @@
     "test:jest-image-snapshot": "npm run build && start-server-and-test serve http://localhost:5000 test",
     "cy:open": "cypress open",
     "test:e2e": "start-server-and-test develop http://localhost:8000 cy:open",
-    "prepare": "husky install"
+    "prepare": "husky install && echo 'PATH=$PATH:'$PATH >> .husky/_/husky.sh"
   },
   "husky": {
     "hooks": {
