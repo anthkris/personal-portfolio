@@ -1,6 +1,6 @@
 const graphql = require('gatsby');
 
-const path = require(`path`);
+const path = require('path');
 const fetch = require('isomorphic-fetch');
 
 const turnPostsIntoPages = async ({ graphql, actions }) => {
@@ -37,7 +37,7 @@ const turnPostsIntoPages = async ({ graphql, actions }) => {
   });
 };
 
-export const createPages = async (params) => {
+exports.createPages = async (params) => {
   // Create pages dynamically
   // 1. Posts
   // Run all of the concurrently

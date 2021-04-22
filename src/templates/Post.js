@@ -7,7 +7,7 @@ import BlockContent from '@sanity/block-content-to-react';
 import getYouTubeId from 'get-youtube-id';
 import YouTube from 'react-youtube';
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import { a11yDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import SEO from '../components/SEO';
 
 const PostStyles = styled.section`
@@ -66,7 +66,11 @@ const SinglePostPage = ({ data }) => {
     }
     const { language, code } = node;
     return (
-      <SyntaxHighlighter language={language || 'text'} style={docco}>
+      <SyntaxHighlighter
+        language={language || 'text'}
+        style={a11yDark}
+        tabindex="0"
+      >
         {code}
       </SyntaxHighlighter>
     );

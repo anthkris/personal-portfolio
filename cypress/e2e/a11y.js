@@ -3,9 +3,10 @@ describe('Accessibility tests', () => {
     cy.visit('/').get('main').injectAxe();
   });
   const axeRunContext = {
-    exclude: [['.gatsby-highlight'], ['#an-id']],
+    exclude: [['.gatsby-highlight']],
   };
   it('Has no detectable accessibility violations on load', () => {
+    cy.wait(1000);
     cy.checkA11y(axeRunContext);
   });
   it('Navigates to About page and checks for accessibility violations', () => {
@@ -21,15 +22,11 @@ describe('Accessibility tests', () => {
       .checkA11y(axeRunContext);
   });
   it('Navigates to Post page and checks for accessibility violations', () => {
-    cy.get('nav')
-      .findByRole('link', { name: /writing/i })
-      .click()
-      .get('main')
-      .findByRole('heading', {
-        name: /The Tiny Deliberate Practice of the Quiz Game/i,
-      })
-      .click()
-      .checkA11y(axeRunContext);
+    // Must injectAxe whenever you visit a new page with cy.visit
+    cy.visit(
+      '/writing/the-tiny-deliberate-practice-of-the-quiz-game/'
+    ).injectAxe();
+    cy.checkA11y(axeRunContext);
   });
   it('Navigates to Play page and checks for accessibility violations', () => {
     cy.get('nav')
