@@ -16,23 +16,23 @@ const ContentStyles = styled.div`
   flex-direction: column;
 `;
 
-const Layout = ({ children }) => {
-  // console.log(children);
+const Layout = ({ children, location, pageContext, data }) => {
+  // console.log('Props from layout', children, location, pageContext);
   let postTitle;
   let markText;
   let tagline;
-  if (children.props.location.pathname.includes('/play')) {
+  if (location.pathname.includes('/play')) {
     markText = 'is making stuff';
     tagline = 'on the interwebs';
-  } else if (children.props.pageContext.slug) {
+  } else if (pageContext.slug) {
     // console.log('has slug');
-    postTitle = children.props.data.post.title;
+    postTitle = data.post.title;
     markText = null;
     tagline = null;
-  } else if (children.props.location.pathname.includes('/writing')) {
+  } else if (location.pathname.includes('/writing')) {
     markText = 'is writing';
     tagline = 'about learning, work, and play';
-  } else if (children.props.location.pathname.includes('/about')) {
+  } else if (location.pathname.includes('/about')) {
     markText = 'is learning';
     tagline = 'something';
   } else {
@@ -57,9 +57,8 @@ const Layout = ({ children }) => {
 export default Layout;
 
 Layout.propTypes = {
-  children: PropTypes.shape({
-    data: PropTypes.object,
-    props: PropTypes.object.isRequired,
-    location: PropTypes.object,
-  }).isRequired,
+  location: PropTypes.object,
+  data: PropTypes.object,
+  pageContext: PropTypes.object,
+  children: PropTypes.object.isRequired,
 };

@@ -55,8 +55,8 @@ const AboutPage = () => (
           placeholder="blurred"
           loading="eager"
           alt="Jazzy and Dashwood (dogs)"
-          height="400"
-          width="800"
+          height={400}
+          width={800}
         />
         <figcaption className="imageCaption">
           I don't have a headshot, so here are my dogs, Dashwood and Jazzy.{' '}
