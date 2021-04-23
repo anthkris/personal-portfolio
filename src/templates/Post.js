@@ -69,7 +69,7 @@ const SinglePostPage = ({ data }) => {
       <SyntaxHighlighter
         language={language || 'text'}
         style={a11yDark}
-        tabindex="0"
+        tabIndex="0"
       >
         {code}
       </SyntaxHighlighter>
