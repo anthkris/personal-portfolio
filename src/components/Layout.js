@@ -60,5 +60,9 @@ Layout.propTypes = {
   location: PropTypes.object,
   data: PropTypes.object,
   pageContext: PropTypes.object,
-  children: PropTypes.object.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.node,
+    PropTypes.object,
+  ]).isRequired,
 };
