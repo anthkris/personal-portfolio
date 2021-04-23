@@ -8,6 +8,9 @@ const {
 dotenv.config({ path: '.env' });
 
 module.exports = {
+  flags: {
+    DEV_SSR: true,
+  },
   siteMetadata: {
     title: 'K. Anthony Portfolio',
     siteUrl: 'https://knanthony.com',
