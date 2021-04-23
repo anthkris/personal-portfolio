@@ -22,7 +22,8 @@
     "test": "jest --coverage",
     "test:jest-image-snapshot": "npm run build && start-server-and-test serve http://localhost:5000 test",
     "cy:open": "cypress open",
-    "test:e2e": "start-server-and-test develop http://localhost:8000 cy:open",
+    "cy:run": "cypress run",
+    "test:e2e": "start-server-and-test develop http://localhost:8000 cy:run",
     "prepare": "husky install",
     "pre-commit": "npm run lint && npm run test",
     "pre-push": "npm run lint && npm run test && npm run test:e2e"
