@@ -119,5 +119,12 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: 'gatsby-plugin-fathom',
+      options: {
+        // Unique site id
+        siteId: 'TREJQEXO',
+      },
+    },
   ],
 };
