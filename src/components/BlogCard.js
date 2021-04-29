@@ -24,6 +24,9 @@ const BlogCardStyles = styled.a`
   .postDescription {
     line-height: 1.8rem;
   }
+  @media (min-width: 768px) {
+    width: 70%;
+  }
 `;
 
 const BlogCard = ({ postSlug, postTitle, postDesc, postDate }) => (

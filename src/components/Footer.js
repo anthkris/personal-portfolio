@@ -21,6 +21,9 @@ const FooterStyles = styled.footer`
     gap: 1rem;
     font-size: 1.4rem;
     flex-wrap: wrap;
+    a:hover {
+      color: var(--portfolio-yellow);
+    }
   }
   .copyright {
     order: 1;

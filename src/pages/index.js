@@ -20,7 +20,7 @@ const HalfPageStyles = styled.div`
 
   section {
     @media (min-width: 650px) {
-      width: 48%;
+      width: 58%;
     }
   }
   .imageSection {
@@ -30,6 +30,8 @@ const HalfPageStyles = styled.div`
     @media (min-width: 650px) {
       display: flex;
       margin: initial;
+      justify-content: flex-end;
+      width: 38%;
     }
   }
   .homeImg {
@@ -79,9 +81,11 @@ const HomePage = () => (
           </p>
           <p className="leadText">
             I’m a front-end engineer at Amazon with a learning experience design
-            background. In my personal work, I blend the two worlds to create
-            story-focused learning experiences that help solve problems for
-            people.
+            background.
+          </p>
+          <p className="leadText">
+            I focus on exploring and mixing the web, HTML5 game development,
+            WebVR, and how people learn.
           </p>
         </section>
         <section className="imageSection">
@@ -95,10 +99,7 @@ const HomePage = () => (
     </HalfPageStyles>
     <PortfolioStyles>
       <div className="interior">
-        <h3>
-          Kristin focuses on creating story-focused, game-based learning
-          experiences…
-        </h3>
+        <h3>Kristin focuses on helping people learn work through play…</h3>
         <div className="portfolioCards">
           <PortfolioCard
             imgSrc={BoB}
@@ -119,7 +120,7 @@ const HomePage = () => (
     </PortfolioStyles>
     <OtherProjectStyles>
       <div className="interior">
-        <h3>… and lots of other resources, too!</h3>
+        <h3>… and making lots of other resources, too!</h3>
         <div className="otherProjectCards">
           <PlainCard
             itemTitle="Dear Instructional Designer"

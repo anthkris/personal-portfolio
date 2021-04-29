@@ -10,7 +10,7 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import { a11yDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import SEO from '../components/SEO';
 
-const PostStyles = styled.section`
+const PostStyles = styled.div`
   padding: 2rem;
   .title {
     line-height: 1.2em;
@@ -37,7 +37,10 @@ const PostStyles = styled.section`
     white-space: pre-wrap;
   }
   @media (min-width: 768px) {
-    width: 70%;
+    .postContent {
+      width: 70%;
+      margin: 0 auto;
+    }
   }
 `;
 
@@ -105,7 +108,11 @@ const SinglePostPage = ({ data }) => {
     <>
       <SEO title={post.title} />
       <PostStyles className="interior longForm">
-        <BlockContent blocks={post._rawBody} serializers={serializers} />
+        <BlockContent
+          className="postContent"
+          blocks={post._rawBody}
+          serializers={serializers}
+        />
       </PostStyles>
     </>
   );

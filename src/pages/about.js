@@ -65,39 +65,37 @@ const AboutPage = () => (
       </figure>
       <section>
         <p className="leadText">
-          I am fundamentally motivated to{' '}
-          <span className="motivationHighlight">learn new things</span> and
-          display that learning through projects,{' '}
-          <span className="motivationHighlight">meet challenges</span> and make
-          progress towards goals, and{' '}
-          <span className="motivationHighlight">make an impact</span> on
-          processes, people, and organizations.
+          Can you remember the first online course you ever took? Well, I can
+          remember the first one I ever made and{' '}
+          <span className="motivationHighlight">it was awful</span>.
         </p>
         <p>
-          Can you remember the first online course you ever took? Well I can
-          remember the first one I ever made… and it was awful. But I didn’t
-          have the vocabulary to describe what was going wrong. With that desire
-          to articulate what I experienced as I was creating that first course,
-          I fell into learning experience design. But since the very beginning,
-          I’ve been fascinated by the tech and development side of that work.
+          At the time, I didn’t have the vocabulary to describe what was going
+          wrong. In following my curiosity, I fell into learning experience
+          design. But since the very beginning, I’ve been fascinated by the tech
+          and development side of that work.
         </p>
         <p>
           I started teaching myself web development so that I could create
           learning experiences that went beyond what typical WYSIWYG elearning
           tools allowed. During my career, I’ve created HTML5 games, progressive
-          web apps, and even simulations of enterprise tools with tools such as
-          Phaser, React, NextJS, and AWS tools such as Lambda, Translate, and
-          Step Functions. That journey culminated in my first official front-end
-          engineer role in 2021.
+          web apps, and even training simulations using tools such as{' '}
+          <span className="motivationHighlight">
+            PhaserJS, React, NextJS, and AWS tools such as Lambda, Translate,
+            and Step Functions
+          </span>
+          . That journey culminated in my first official front-end engineer role
+          in 2021.
         </p>
         <p>
-          I’m currently a front-end engineer at Amazon building experiences with
-          AmazonSmile.
-        </p>
-        <p>
-          In my personal work, I focus on combining learning and tech into work
-          you can play: gameful, story-driven experiences that promote
-          inclusion, diversity, equity, and healthy, productive lives.
+          I’m currently a front-end engineer building experiences with
+          AmazonSmile. In my personal work,{' '}
+          <span className="motivationHighlight">
+            I focus on combining learning and web development into work you can
+            play
+          </span>
+          : gameful, story-driven experiences that promote inclusion, diversity,
+          equity, and help people learn interesting stuff.
         </p>
       </section>
     </AboutPageStyles>
