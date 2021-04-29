@@ -4,7 +4,7 @@ describe('portfolio', () => {
     cy.visit('/');
     cy.get('nav').findByRole('link', { name: /about/i }).click().wait(1000);
     cy.get('.leadText')
-      .contains('I am fundamentally motivated')
+      .contains('Can you remember the first online course you ever took?')
       .should('exist');
     cy.get('nav').findByRole('link', { name: /play/i }).click();
     cy.findByRole('heading', { name: 'on the interwebs' }).should('exist');
