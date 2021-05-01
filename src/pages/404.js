@@ -56,8 +56,8 @@ const FourOhFourPage = () => (
           from the internet. It just moved.
         </p>
         <p>
-          <a className="fourOhFourLink" href="https://2019.knanthony.com/">
-            2019 Portfolio Site
+          <a className="fourOhFourLink" href="https://2018.knanthony.com/">
+            2018 Portfolio Site
           </a>
         </p>
       </section>
