@@ -1,0 +1,3 @@
+# Redirect with a 301
+/showcase/*        http://showcase.knanthony.com/:splat              301
+/blog/*            http://2018.knanthony.com/blog/:splat             301
